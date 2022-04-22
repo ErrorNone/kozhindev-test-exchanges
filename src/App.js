@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import axios from 'axios';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 function App() {
+  const dispatch = useDispatch()
+  const currency = useSelector(state => state.currency.currency)
+
+  useEffect(() => {
+    fetchCurrency()
+  }, [])
+
+  async function fetchCurrency() {
+      const response = await axios.get('http://api.currencylayer.com/live?access_key=0f14cd502c274457b410f5020ce68d55')
+      getCurrency(response.data);
+    }
+
+  const getCurrency = (quotes) => {
+   const curr = {
+     quotes
+   }
+   dispatch({type: "GET_CURRENCY", payload: curr})
+  }
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>{currency}</div>
     </div>
+
   );
 }
 
