@@ -6,10 +6,13 @@ import cl from "./Table.module.css";
 
 const Table = () => {
   return (
-    <table className={cl.table}>
+    <div className={cl.container}>
+      <table className={cl.table}>
         <Thead/>
         <Tbody/>
-    </table>
+      </table>
+    </div>
+    
   );
 };
 

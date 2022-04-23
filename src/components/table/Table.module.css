@@ -1,6 +1,9 @@
-.table {
-    margin: 30px;
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.table {
+    margin: 30px;
 }
