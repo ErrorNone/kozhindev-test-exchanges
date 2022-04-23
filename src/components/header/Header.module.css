@@ -1,0 +1,39 @@
+.header {
+    width: 100%;
+    background: black;
+    color: white;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+.container {
+    margin: 0 30px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+}
+
+.menu__title {
+    margin-right: 15px;
+}
+
+.menu__requestTime {
+    margin-right: 15px;
+}
+
+.menu__buttonUpdate {
+    background: none;
+    border: none;
+    color: white;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu__buttonUpdate:hover {
+    text-decoration: underline;
+}
