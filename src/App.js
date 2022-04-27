@@ -5,17 +5,20 @@ import Header from './components/header/Header';
 import Table from './components/table/Table';
 import { getCurrencyAction } from './store/currencyReduser';
 function App() {
+  
   const dispatch = useDispatch()
   const currency = useSelector(state => state.currency.currency)
 
   // useEffect(() => {
   //   dispatch(fetchCurrency())
   // }, [])
-  
+
+  console.log(currency);
 
   const getCurrency = (quotes) => {
-    // fetchCurrency()
-   const curr = [quotes]
+   const curr = {
+     quotes
+   }
    dispatch(getCurrencyAction(curr))
   }
   
@@ -26,6 +29,7 @@ function App() {
       <Table/>
        <button onClick={() => getCurrency()}>getCurrency</button>
        <button onClick={() => dispatch(fetchCurrency())}>fetchCurrency</button>
+       {/* <div>{currency}</div> */}
     </div>
   );
 }
