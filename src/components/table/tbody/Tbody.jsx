@@ -1,18 +1,25 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import TrRUB from "./trRUB/TrRUB";
-import TrUSD from "../trCurrency/trUSD/TrUSD";
 
 import cl from "./Tbody.module.css";
+import Tr from "./tr/Tr";
 
 const Tbody = () => {
   const currency = useSelector((state) => state.currency);
-  console.log(currency);
+
+  let Valutes = Object.entries(currency).map(valute => {
+    return(valute[1])
+  })
+
+
   return (
     <tbody>
-      {/* <TrUSD/>
-      <TrRUB/> */}
-      {}
+      {Valutes.map((valute, index) => {
+        return (
+         <Tr valute={valute} index={index} key={valute.ID}/>
+        )
+      })
+      }
     </tbody>
   );
 };

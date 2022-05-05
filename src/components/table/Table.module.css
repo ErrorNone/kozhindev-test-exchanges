@@ -2,8 +2,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .table {
-    margin: 30px;
+    margin:20px 30px 40px;
+}
+
+
+.title {
+    font-size: 38px;
+    font-weight: 500;
+    margin-top:40px ;
 }

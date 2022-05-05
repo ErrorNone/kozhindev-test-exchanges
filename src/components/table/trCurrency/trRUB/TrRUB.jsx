@@ -4,17 +4,17 @@ import cl from "./TrRUB.module.css";
 
 const TrRUB = () => {
   const currency = useSelector((state) => state.currency);
-  console.log(currency);
+  // console.log(currency);
   let RUBUSD =
     Object.keys(currency).length === 0 ? "Обновите" : (1 / currency.USD.Value ).toFixed(4);
   let RUBEUR =
     Object.keys(currency).length === 0
       ? "Обновите"
-      : (currency.EUR.Value).toFixed(4);
+      : currency.EUR.Value
   let RUBCNY =
     Object.keys(currency).length === 0
       ? "Обновите"
-      : (currency.CNY.Value).toFixed(4);
+      : currency.CNY.Value
   return (
     <tr>
       <td className={cl.th}>2</td>

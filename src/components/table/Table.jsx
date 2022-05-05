@@ -7,6 +7,7 @@ import cl from "./Table.module.css";
 const Table = () => {
   return (
     <div className={cl.container}>
+      <h1 className={cl.title}>Курсы валют</h1>
       <table className={cl.table}>
         <Thead/>
         <Tbody/>
