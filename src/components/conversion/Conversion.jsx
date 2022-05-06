@@ -14,13 +14,21 @@ const Conversion = () => {
     const [inputValue2, setInputValue2] = useState (1)
     const [selectValue1, setSelectValue1] = useState (1)
     const [selectValue2, setSelectValue2] = useState (1)
+    const conversionIsSelelect1InSelect2 = () => {
+       return (inputValue1 * selectValue1 /  selectValue2).toFixed(4)
+    }
    
   return (
     <div className={cl.conversion}>
         <h2 className={cl.title}>Конвертация валют</h2>
         <span className={cl.string}>
             <MyInput 
-            placeholder='0'
+            onKeyPress={(event) => {
+                if (!/[0-9\.]/.test(event.key)) {
+                  event.preventDefault()
+                }
+              }}
+            placeholder={inputValue1}
             value={inputValue1}
             onChange={e => setInputValue1(e.target.value)}
             />
@@ -33,8 +41,13 @@ const Conversion = () => {
             />
         </span>
         <span className={cl.string}>
-            <MyInput 
-            placeholder='0'
+            <MyInput
+            onKeyPress={(event) => {
+                if (!/[0-9\.]/.test(event.key)) {
+                  event.preventDefault()
+                }
+              }} 
+            placeholder='1'
             value={(inputValue1 * selectValue1 /  selectValue2).toFixed(4)}
             onChange={e => setInputValue2(e.target.value)}
             />
