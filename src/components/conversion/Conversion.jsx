@@ -9,15 +9,12 @@ const Conversion = () => {
     let Valutes = Object.entries(currency).map(valute => {
         return(valute[1])
     })
-    // console.log(Valutes)
+  
     const [inputValue1, setInputValue1] = useState (1)
     const [inputValue2, setInputValue2] = useState (1)
     const [selectValue1, setSelectValue1] = useState (1)
     const [selectValue2, setSelectValue2] = useState (1)
-    const conversionIsSelelect1InSelect2 = () => {
-       return (inputValue1 * selectValue1 /  selectValue2).toFixed(4)
-    }
-   
+ 
   return (
     <div className={cl.conversion}>
         <h2 className={cl.title}>Конвертация валют</h2>

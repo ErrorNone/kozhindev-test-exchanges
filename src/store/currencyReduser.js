@@ -8,7 +8,6 @@ export const currencyReduser = (state = defaultState, action) => {
         case GET_CURRENCY:
             return {...state, ...state.currency}
         case UPDATE_CURRENCY:
-            // console.log(state)
             return {...state, ...action.payload}
         default:
             return state
@@ -17,4 +16,5 @@ export const currencyReduser = (state = defaultState, action) => {
 
 export const getCurrencyAction = (payload) => ({type: GET_CURRENCY, payload})
 export const updateCurrencyAction = (payload) => ({type: UPDATE_CURRENCY, payload})
+
 

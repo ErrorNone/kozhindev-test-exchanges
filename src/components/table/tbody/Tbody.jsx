@@ -6,10 +6,10 @@ import Tr from "./tr/Tr";
 
 const Tbody = () => {
   const currency = useSelector((state) => state.currency);
-
   let Valutes = Object.entries(currency).map(valute => {
     return(valute[1])
   })
+  console.log(Valutes)
 
 
   return (

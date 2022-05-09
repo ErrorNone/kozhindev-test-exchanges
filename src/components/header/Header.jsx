@@ -1,11 +1,17 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "reset-css";
-import { fetchCurrency } from "../../asyncActions/currency";
+import { fetchCurrency, timeCurrency } from "../../asyncActions/currency";
+import { timeCurrencyAction } from "../../store/currencyReduser";
 import cl from "./Header.module.css";
 
 const Header = () => {
   const dispatch = useDispatch()
+  const time = useSelector((state) => state.time.payload)
+  let myTime = time !== undefined ? time.replace(/T/, ' ') :  ''
+  let dataTime = myTime.slice(0, 16)
+
+
 
     
   return (
@@ -14,9 +20,10 @@ const Header = () => {
           <div className={cl.menu}>
             <h1 className={cl.menu__title}>Курсы валют на</h1>
             <span>
-            <time className={cl.menu__requestTime}>13:49 22.04.2022</time>
+            <time className={cl.menu__requestTime}>{dataTime}</time>
+           
             </span>
-            <button className={cl.menu__buttonUpdate} onClick={() => dispatch(fetchCurrency())}>Обновить</button>
+            <button className={cl.menu__buttonUpdate} onClick={() => dispatch(fetchCurrency() && timeCurrency())}>Обновить</button>
         </div>
       </div>
     </header>

@@ -1,14 +1,21 @@
-import { getCurrencyAction, updateCurrencyAction } from "../store/currencyReduser"
+import {
+  updateCurrencyAction,
+} from "../store/currencyReduser";
+import { timeCurrencyAction } from "../store/timeReduser";
 
 export const fetchCurrency = () => {
-    return dispatch => {
-  // fetch('http://api.currencylayer.com/live?access_key=4df2a45fb3ab411dad0cd582c2a21cb0')
-  //     .then(response => response.json())
-  //     .then(data => dispatch(updateCurrencyAction(data.quotes)))
-  fetch("https://www.cbr-xml-daily.ru/daily_json.js"
-  )
-      .then(response => response.json())
-      .then(data => dispatch(updateCurrencyAction(data.Valute)))
-    }
-}
+  return (dispatch) => {
+    fetch("https://www.cbr-xml-daily.ru/daily_json.js")
+      .then((response) => response.json())
+      .then((data) => dispatch(updateCurrencyAction(data.Valute)));
+  };
+};
 
+export const timeCurrency = () => {
+  return (dispatch) => {
+    fetch("https://www.cbr-xml-daily.ru/daily_json.js")
+      .then((response) => response.json())
+      .then((data) => dispatch(timeCurrencyAction(data.Date))) ;
+      
+  };
+};
