@@ -7,7 +7,7 @@ export const fetchCurrency = () => {
   return (dispatch) => {
     fetch("https://www.cbr-xml-daily.ru/daily_json.js")
       .then((response) => response.json())
-      .then((data) => dispatch(updateCurrencyAction(data.Valute)));
+      .then((data) => dispatch(updateCurrencyAction(data.Valute)))
   };
 };
 
