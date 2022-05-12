@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrency, timeCurrency } from './asyncActions/currency';
-import Conversion from './components/conversion/Conversion';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
-import Table from './components/table/Table';
 import Loader from './UI/loader/Loader';
+import './style.scss';
 
 function App() {
   const currency = useSelector((state) => state.currency)
@@ -18,12 +17,9 @@ function App() {
     dispatch(timeCurrency())
   }, [])
   
-  
-  
-  
 
   return (
-    <div className="App">
+    <div className="app">
       <Header/>
    
       { !currencyNull
