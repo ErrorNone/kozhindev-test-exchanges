@@ -4,7 +4,7 @@ import { fetchCurrency, timeCurrency } from './asyncActions/currency';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
 import Loader from './UI/loader/Loader';
-import './style.scss';
+import './App.scss';
 
 function App() {
   const currency = useSelector((state) => state.currency)

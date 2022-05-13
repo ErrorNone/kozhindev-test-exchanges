@@ -2,13 +2,13 @@ import React from "react";
 import "reset-css";
 import Tbody from "./tbody/Tbody";
 import Thead from "./thead/Thead";
-import cl from "./Table.module.css";
+import  "./Table.scss";
 
 const Table = () => {
   return (
-    <div className={cl.container}>
-      <h1 className={cl.title}>Курсы валют</h1>
-      <table className={cl.table}>
+    <div className='container'>
+      <h1 className='title'>Курсы валют</h1>
+      <table className='table'>
         <Thead/>
         <Tbody/>
       </table>

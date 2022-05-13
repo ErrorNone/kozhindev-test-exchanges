@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
-import cl from "./Tbody.module.css";
 import Tr from "./tr/Tr";
 
 const Tbody = () => {

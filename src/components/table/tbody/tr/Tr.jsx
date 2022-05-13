@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import cl from "./Tr.module.css";
+import cl from "./Tr.scss";
 
 const Tr = ({valute, index}) => {
     const currency = useSelector((state) => state.currency);
@@ -13,12 +13,12 @@ const Tr = ({valute, index}) => {
     Object.keys(currency).length === 0 ? 1 : (currency.CNY.Value)
   return (
     <tr>
-      <td className={cl.th}>{index + 1}</td>
-      <td className={cl.th}>{valute.CharCode}</td>
-      <td className={cl.th}>{valute.Value}</td>
-      <td className={cl.th}>{(valute.Value / USD).toFixed(4)}</td>
-      <td className={cl.th}>{(valute.Value / EUR).toFixed(4)}</td>
-      <td className={cl.th}>{(valute.Value / CNY).toFixed(4)}</td>
+      <td>{index + 1}</td>
+      <td>{valute.CharCode}</td>
+      <td>{valute.Value}</td>
+      <td>{(valute.Value / USD).toFixed(4)}</td>
+      <td>{(valute.Value / EUR).toFixed(4)}</td>
+      <td>{(valute.Value / CNY).toFixed(4)}</td>
     </tr>
   );
 };

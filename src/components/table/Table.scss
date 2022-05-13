@@ -1,8 +1,11 @@
-.container {
+// @import './sass/index.scss';
+
+.container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: rgb(27, 25, 25);
 }
 
 .table {
@@ -14,4 +17,5 @@
     font-size: 38px;
     font-weight: 500;
     margin-top:40px ;
+    color: white;
 }

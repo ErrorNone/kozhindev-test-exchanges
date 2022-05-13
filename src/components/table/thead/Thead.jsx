@@ -1,16 +1,16 @@
 import React from "react";
-import cl from "./Thead.module.css";
+import cl from "./Thead.scss";
 
 const Thead = () => {
   return (
     <thead>
       <tr>
-        <th className={cl.th}>№</th>
-        <th className={cl.th}>Код валюты</th>
-        <th className={cl.th}>Курс к ₽</th>
-        <th className={cl.th}>Курс к $</th>
-        <th className={cl.th}>Курс к €</th>
-        <th className={cl.th}>Курс к ¥</th>
+        <th>№</th>
+        <th>Код валюты</th>
+        <th>Курс к ₽</th>
+        <th>Курс к $</th>
+        <th>Курс к €</th>
+        <th>Курс к ¥</th>
       </tr>
     </thead>
   );

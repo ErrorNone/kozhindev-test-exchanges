@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import MyInput from '../../UI/input/MyInput'
 import MySelect from '../../UI/select/MySelect'
-import cl from './Conversion.module.css'
+import cl from './Conversion.scss'
 
 const Conversion = () => {
     const currency = useSelector((state) => state.currency)
@@ -16,9 +16,9 @@ const Conversion = () => {
     const [selectValue2, setSelectValue2] = useState (1)
  
   return (
-    <div className={cl.conversion}>
-        <h2 className={cl.title}>Конвертация валют</h2>
-        <span className={cl.string}>
+    <div className='conversion'>
+        <h2 className='conversion__title'>Конвертация валют</h2>
+        <span className='conversion__string'>
             <MyInput 
             onKeyPress={(event) => {
                 if (!/[0-9\.]/.test(event.key)) {
@@ -37,7 +37,7 @@ const Conversion = () => {
             onChange={cerrentValue => setSelectValue1(cerrentValue)}
             />
         </span>
-        <span className={cl.string}>
+        <span className='conversion__string'>
             <MyInput
             onKeyPress={(event) => {
                 if (!/[0-9\.]/.test(event.key)) {
