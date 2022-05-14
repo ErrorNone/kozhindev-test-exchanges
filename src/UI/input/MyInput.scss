@@ -1,0 +1,27 @@
+@import '../../sass/_vars.scss';
+
+.input {
+    outline: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid $orange;
+    background: $black-secondary;
+    color: $orange;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 30px;
+    box-shadow: 9px 9px 10px $black-secondary;
+    &::placeholder {
+    color: $orange;
+    }
+   @media (max-width: 700px) {
+    & {
+            padding: 6px;
+            margin-right: 0;
+            width: 360px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+ 

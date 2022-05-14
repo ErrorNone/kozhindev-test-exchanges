@@ -16,7 +16,7 @@ const Header = () => {
     
   return (
     <header className='header'>
-      <div className='container'>
+      <div className='container__header'>
           <div className='menu'>
             <h1 className='menu__title'>Курсы валют на</h1>
             <span>

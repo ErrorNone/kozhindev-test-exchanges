@@ -1,6 +1,8 @@
-@import './sass/index.scss';
+@import './sass/_vars.scss';
 
 .app {
+    min-height: 100vh;
+    font-family: "Roboto";
+    overflow: hidden;
     background-color: $black-primary;
-    height: 100vh;
 }

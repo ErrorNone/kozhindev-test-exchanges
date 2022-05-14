@@ -1,12 +1,13 @@
+@import '../../sass/_vars.scss';
+
 .header {
     width: 100%;
-    background: black;
-    color: white;
-    font-family: "Roboto";
+    background: $black-secondary;
+    color: $white;
     font-size: 16px;
 }
 
-.container {
+.container__header {
     margin: 0 30px;
 }
 
@@ -28,12 +29,14 @@
 .menu__buttonUpdate {
     background: none;
     border: none;
-    color: white;
+    color: $white;
     padding: 0;
     font-size: 16px;
     cursor: pointer;
+    transition: all 0.2s linear;
+    &:hover {
+    text-decoration: underline;
+    color: $orange;
+    }
 }
 
-.menu__buttonUpdate:hover {
-    text-decoration: underline;
-}

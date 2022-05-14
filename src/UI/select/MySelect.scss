@@ -1,0 +1,14 @@
+@import '../../sass/_vars.scss';
+
+.select {
+    outline: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid $orange;
+    background: $black-secondary;
+    color: $orange;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 9px 9px 10px $black-secondary;
+}
+

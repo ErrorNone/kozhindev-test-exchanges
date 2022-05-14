@@ -1,9 +1,9 @@
 import React from "react";
-import cl from "./MySelect.module.css";
+import cl from "./MySelect.scss";
 
 const MySelect = ({ options, defaultValue, value, onChange }) => {
   return (
-    <select className={cl.select} value={value} onChange={(event) => onChange(event.target.value)}>
+    <select className='select' value={value} onChange={(event) => onChange(event.target.value)}>
       <option  value="" disabled>
         {defaultValue}
       </option>

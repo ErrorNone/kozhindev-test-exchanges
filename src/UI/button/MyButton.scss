@@ -1,0 +1,26 @@
+@import '../../sass/_vars.scss';
+
+.my-button {
+    padding: 6px 10px;
+   
+    border-radius: 6px;
+    border: 1px solid $white;
+    text-align: center;
+    color: $white;
+    font-size: 16px;
+    background: $black-secondary;
+    cursor: pointer;
+    box-shadow: 9px 9px 10px  $black-secondary;
+    transition: all 0.2s linear;
+    &:hover {
+        border-color: $orange;
+        color: $orange;
+        background: $black-secondary;
+    }
+    @media  (max-width: 560px){
+        & {
+            font-size: 14px;
+        }
+    }
+}
+

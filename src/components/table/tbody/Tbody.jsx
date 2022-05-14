@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import Tr from "./tr/Tr";
 
-const Tbody = () => {
+const Tbody = ({showValutes}) => {
   const currency = useSelector((state) => state.currency)
   
   let Valutes = Object.entries(currency).map(valute => {
@@ -11,8 +11,7 @@ const Tbody = () => {
   })
   let fiveValutes = Valutes.filter(valute => valute.NumCode < 207)
   
-  const [showValutes, setShowValutes] = useState(false)
-  const [buttonValue, setButtonValue] = useState('Показать больше валют')
+  
 
   return (
     <tbody>
@@ -28,14 +27,7 @@ const Tbody = () => {
           )
         })
       }
-      <button onClick={() => {
-        showValutes === true
-        ? setShowValutes(false) || setButtonValue('Показать больше валют')
-        : setShowValutes(true) || setButtonValue('Показать меньше валют')
-        }
-        }
-        >
-          {buttonValue}</button>
+  
     </tbody>
   );
 };

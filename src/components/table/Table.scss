@@ -1,15 +1,33 @@
-// @import './sass/index.scss';
+@import '../../sass/_vars.scss';
 
 .container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: rgb(27, 25, 25);
+    background: $black-primary;
 }
 
 .table {
-    margin:20px 30px 40px;
+    margin:20px 30px;
+    @media  (max-width: 500px){
+        & {
+            margin:20px 0px;
+            width: 90%;
+            }
+        }
+   
+}
+
+.table__content {
+    
+    box-shadow: 9px 9px 10px  $black-secondary;
+    @media  (max-width: 500px){
+    & {
+        display: flex;
+        overflow-x: auto;
+        }
+    }
 }
 
 
@@ -17,5 +35,11 @@
     font-size: 38px;
     font-weight: 500;
     margin-top:40px ;
-    color: white;
+    color: $white;
+    @media  (max-width: 700px){
+        & {
+            font-size: 30px;
+            margin-top:30px ; 
+        }
+    }
 }
