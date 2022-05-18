@@ -2,7 +2,32 @@
 
 .app {
     min-height: 100vh;
-    font-family: "Roboto";
+    font-family: 'Roboto', '-apple-system', 'BlinkMacSystemFont', 'Helvetica Neue', Helvetica,sans-serif;
     overflow: hidden;
     background-color: $black-primary;
+}
+
+.text-error{
+    margin: 50px 60px;
+    font-size: 24px;
+    line-height: 1.2;
+    color: $white;
+    text-align: center;
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        & {
+            line-height: 1.4;
+            margin: 50px 30px;
+            font-size: 18px;
+        }
+    }
+    @media (max-width: 500px) {
+        & {
+            margin: 50px 15px;
+            font-size: 14px;
+        }
+    }
 }

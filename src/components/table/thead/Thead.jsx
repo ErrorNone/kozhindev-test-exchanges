@@ -1,5 +1,5 @@
 import React from "react";
-import cl from "./Thead.scss";
+import  "./Thead.scss";
 
 const Thead = () => {
   return (

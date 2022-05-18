@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import cl from "./Tr.scss";
+import "./Tr.scss";
 
 const Tr = ({valute, index}) => {
     const currency = useSelector((state) => state.currency);

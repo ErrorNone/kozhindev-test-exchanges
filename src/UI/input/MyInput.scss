@@ -18,8 +18,25 @@
     & {
             padding: 6px;
             margin-right: 0;
-            width: 360px;
+            width: 319px;
             margin-bottom: 10px;
+            font-size: 14px;
+        }
+        &::placeholder {
+            font-size: 14px;
+        }
+    }
+   @media (max-width: 600px) {
+    & {
+        width: 277px;
+        }
+        &::placeholder {
+            font-size: 12px;
+        }
+    }
+   @media (max-width: 500px) {
+    & {
+        width: 237px;
         }
     }
 }

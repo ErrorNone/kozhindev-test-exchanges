@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import MyInput from '../../UI/input/MyInput'
 import MySelect from '../../UI/select/MySelect'
-import cl from './Conversion.scss'
+import './Conversion.scss'
 
 const Conversion = () => {
     const currency = useSelector((state) => state.currency)
@@ -14,6 +14,9 @@ const Conversion = () => {
     const [inputValue2, setInputValue2] = useState (1)
     const [selectValue1, setSelectValue1] = useState (1)
     const [selectValue2, setSelectValue2] = useState (1)
+    function convertValutes(e) {
+     return setInputValue2(inputValue1 * selectValue1 / e.target.value)
+    }
  
   return (
     <div className='conversion'>
@@ -25,7 +28,7 @@ const Conversion = () => {
                   event.preventDefault()
                 }
               }}
-            placeholder={inputValue1}
+            placeholder='Введите количество...'
             value={inputValue1}
             onChange={e => setInputValue1(e.target.value)}
             />
@@ -34,7 +37,7 @@ const Conversion = () => {
             options={Valutes
             }
             value={Valutes.Value}
-            onChange={cerrentValue => setSelectValue1(cerrentValue)}
+            onChange={currentValue => setSelectValue1(currentValue)}
             />
         </span>
         <span className='conversion__string'>
@@ -44,7 +47,8 @@ const Conversion = () => {
                   event.preventDefault()
                 }
               }} 
-            placeholder='1'
+            placeholder='Введите количество...'
+            // value={inputValue2}
             value={(inputValue1 * selectValue1 /  selectValue2).toFixed(4)}
             onChange={e => setInputValue2(e.target.value)}
             />
@@ -53,7 +57,7 @@ const Conversion = () => {
             options={Valutes
             }
             value={Valutes.Value}
-            onChange={cerrentValue => setSelectValue2(cerrentValue)}
+            onChange={currentValue => setSelectValue2(currentValue)}
             />
         </span>
     </div>

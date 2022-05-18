@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-
 import Tr from "./tr/Tr";
 
 const Tbody = ({showValutes}) => {
@@ -10,8 +9,7 @@ const Tbody = ({showValutes}) => {
     return(valute[1])
   })
   let fiveValutes = Valutes.filter(valute => valute.NumCode < 207)
-  
-  
+
 
   return (
     <tbody>
