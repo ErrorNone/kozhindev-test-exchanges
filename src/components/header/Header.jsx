@@ -9,6 +9,14 @@ const Header = () => {
   const time = useSelector((state) => state.time.payload)
   let myTime = time !== undefined ? time.replace(/T/, ' ') :  ''
   let dataTime = myTime.slice(0, 16)
+  function refreshPage() {
+    window.location.reload()
+  }
+  function handleClick () {
+    dispatch(fetchCurrency()) 
+    dispatch(timeCurrency())
+    refreshPage()
+  }
     
   return (
     <header className='header'>
@@ -19,7 +27,7 @@ const Header = () => {
             <time className='menu__requestTime'>{dataTime}</time>
            
             </span>
-            <button className='menu__buttonUpdate' onClick={() => dispatch(fetchCurrency() && timeCurrency())}>Обновить</button>
+            <button className='menu__buttonUpdate' onClick={handleClick}>Обновить</button>
         </div>
       </div>
     </header>

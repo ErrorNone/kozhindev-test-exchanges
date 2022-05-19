@@ -10,13 +10,19 @@ const Conversion = () => {
         return(valute[1])
     })
   
-    const [inputValue1, setInputValue1] = useState (1)
-    const [inputValue2, setInputValue2] = useState (1)
+    const [inputValue1, setInputValue1] = useState (0)
+    const [inputValue2, setInputValue2] = useState (0)
     const [selectValue1, setSelectValue1] = useState (1)
     const [selectValue2, setSelectValue2] = useState (1)
-    function convertValutes(e) {
-     return setInputValue2(inputValue1 * selectValue1 / e.target.value)
-    }
+    function convertInput1(e) {
+      setInputValue1(e.target.value)
+      setInputValue2((e.target.value * selectValue1 /  selectValue2).toFixed(4))
+      }
+    function convertInput2(e) {
+      setInputValue2(e.target.value)
+      setInputValue1((e.target.value * selectValue2 /  selectValue1).toFixed(4))
+
+      }
  
   return (
     <div className='conversion'>
@@ -30,7 +36,8 @@ const Conversion = () => {
               }}
             placeholder='Введите количество...'
             value={inputValue1}
-            onChange={e => setInputValue1(e.target.value)}
+            onChange={convertInput1}
+            className='input'
             />
             <MySelect
             defaultValue="Валюта"
@@ -48,9 +55,9 @@ const Conversion = () => {
                 }
               }} 
             placeholder='Введите количество...'
-            // value={inputValue2}
-            value={(inputValue1 * selectValue1 /  selectValue2).toFixed(4)}
-            onChange={e => setInputValue2(e.target.value)}
+            value={inputValue2}
+            onChange={convertInput2}
+            className='input'
             />
             <MySelect
             defaultValue="Валюта"
