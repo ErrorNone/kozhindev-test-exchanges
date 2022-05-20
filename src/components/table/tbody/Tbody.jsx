@@ -4,7 +4,7 @@ import Tr from "./tr/Tr";
 const Tbody = ({showValutes, valutesFilter}) => {
 
   let fiveValutes = valutesFilter.filter(valute => valute.NumCode < 207)
-
+  
   return (
     <tbody>
       

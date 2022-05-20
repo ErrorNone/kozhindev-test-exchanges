@@ -13,6 +13,7 @@ const Table = () => {
   let Valutes = Object.entries(currency).map(valute => {
     return(valute[1])
   })
+ 
 
   const [showValutes, setShowValutes] = useState(false);
   const [buttonValue, setButtonValue] = useState("Показать больше валют");
@@ -37,7 +38,7 @@ const Table = () => {
     showAllValutes()
    }, [searchValue])
    
-
+   console.log(valutesFilter.length)
   return (
     <div className="container">
       <MyInput 
@@ -48,10 +49,13 @@ const Table = () => {
       />
       <div className="table">
         <div className="table__content">
-          <table>
-            <Thead />
-            <Tbody showValutes={showValutes} searchValue={searchValue} valutesFilter={valutesFilter}/>
-          </table>
+          { valutesFilter.length !== 0
+            ? <table className="table__inner">
+                  <Thead />
+                  <Tbody showValutes={showValutes} searchValue={searchValue} valutesFilter={valutesFilter}/>
+              </table>
+            : <p className="table__text-error">По вашему запросу ничего не найдено...</p>  
+            }
         </div>
       </div>
       { buttonShow 
