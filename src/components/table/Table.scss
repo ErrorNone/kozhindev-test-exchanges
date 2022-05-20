@@ -31,16 +31,3 @@
 }
 
 
-.title {
-    font-size: 38px;
-    font-weight: 500;
-    margin-top:70px ;
-    color: $white;
-    @media  (max-width: 700px){
-        & {
-            font-size: 30px;
-            margin-top: 60px;
-        }
-    }
-
-}

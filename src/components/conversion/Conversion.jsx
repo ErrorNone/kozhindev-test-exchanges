@@ -37,7 +37,7 @@ const Conversion = () => {
             placeholder='Введите количество...'
             value={inputValue1}
             onChange={convertInput1}
-            className='input'
+            className='input input--conversion'
             />
             <MySelect
             defaultValue="Валюта"
@@ -57,7 +57,7 @@ const Conversion = () => {
             placeholder='Введите количество...'
             value={inputValue2}
             onChange={convertInput2}
-            className='input'
+            className='input input--conversion'
             />
             <MySelect
             defaultValue="Валюта"

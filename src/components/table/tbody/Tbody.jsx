@@ -1,19 +1,15 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 import Tr from "./tr/Tr";
 
-const Tbody = ({showValutes, searchValue}) => {
-  const currency = useSelector((state) => state.currency)
-  let Valutes = Object.entries(currency).map(valute => {
-    return(valute[1])
-  })
-  let fiveValutes = Valutes.filter(valute => valute.NumCode < 207)
-  let valutesFilter = Valutes.filter(valute => valute.Name === searchValue)
+const Tbody = ({showValutes, valutesFilter}) => {
+
+  let fiveValutes = valutesFilter.filter(valute => valute.NumCode < 207)
 
   return (
     <tbody>
+      
       { showValutes === true 
-        ? Valutes.map((valute, index) => {
+        ? valutesFilter.map((valute, index) => {
           return (
            <Tr valute={valute} index={index} key={valute.ID}/>
           )
